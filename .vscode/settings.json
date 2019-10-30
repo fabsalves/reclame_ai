@@ -1,0 +1,8 @@
+{
+    "editor.rulers": [80],
+    "editor.autoIndent": true,
+    "editor.detectIndentation": true,
+    "files.insertFinalNewline": true,
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 2
+}
