@@ -26,6 +26,7 @@ gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 
 gem 'geocoder'
+gem 'correios-cep'
 gem 'faraday'
 
 group :development do

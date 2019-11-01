@@ -1,14 +1,14 @@
-class IpZipcode
+class IpCity
   def self.call(ip)
-    new(ip).zipcode
+    new(ip).city
   end
 
   def initialize(ip)
     @ip = ip
   end
 
-  def zipcode
-    ip_location['postal']
+  def city
+    ip_location['city']
   end
 
   private
