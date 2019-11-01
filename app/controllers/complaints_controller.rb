@@ -6,13 +6,15 @@ class ComplaintsController < ApplicationController
 
   def create
     @complaint = Complaint.new(complaint_params)
+    ip = request.remote_ip
+    zipcode = complaint_params[:zipcode]
+
+    return invalid_address if !MatchLocations.(ip, zipcode) && !test?
 
     if @complaint.save
-      redirect_to new_complaint_path, flash: { notice: 'Successfully created.' }
+      redirect_to root_path, flash: { notice: 'Successfully created.' }
     else
-      redirect_to new_complaint_path, flash: {
-        error: 'Failure, check all fields please.'
-      }
+      render :new, flash: { error: 'Failure, check all fields.' }
     end
   end
 
@@ -21,9 +23,22 @@ class ComplaintsController < ApplicationController
   def complaint_params
     params.require(:complaint).permit(
       :order_id, :zipcode, :description,
-      customer_attributes: [
-        :name, :email, :phone
-      ]
+      customer_attributes: [ :name, :email, :phone ]
     )
+  end
+
+  def invalid_address
+    error = 'Your current location is too far from the shipping address.'
+    
+    respond_to do |format|
+      format.html {
+        flash.now[:error] = error
+        render :new
+      }
+    end
+  end
+
+  def test?
+    Rails.env.test?
   end
 end

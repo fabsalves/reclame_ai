@@ -21,6 +21,9 @@ gem 'mysql2', '~> 0.3.18'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 
+gem 'geocoder'
+gem 'faraday'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
