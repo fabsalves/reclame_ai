@@ -1,0 +1,52 @@
+<div class='container'>
+  <div class="form-group">
+    <h3>Your infos</h3>
+    
+    <%= f.simple_fields_for :customer, @customer do |c| %>
+      <div class="row">
+        <div class="col-md-6">
+          <%= c.input :name, class: 'form-control', placeholder: 'Your name here', autofocus: true %>
+        </div>
+        <div class="col-md-6">
+          <%= c.input :phone, class: 'form-control', placeholder: '(44) 9 8888-9999)' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= c.input :email, class: 'form-control', placeholder: 'your@email.com.br' %>
+        </div>      
+      </div>
+    <% end %>
+  </div>
+
+  <hr style="color: black; border-top: 1px solid #000 !important"/>
+
+  <div class="form-group">
+    <h3>Order infos</h3>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :order_id, class: 'form-control', placeholder: '#ABC123' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :zipcode, class: 'form-control', placeholder: '61.814-284', label: 'Delivery ZipCode' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.input :description, class: 'form-control', placeholder: 'Description of your problem' %>
+      </div>
+    </div>
+  </div>
+
+  <hr style="color: black; border-top: 1px solid #000 !important"/>
+
+  <div class="actions">
+    <div class="row">
+      <div class="col-md-12">
+        <%= f.button :submit, class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
+  </div>
+</div>
