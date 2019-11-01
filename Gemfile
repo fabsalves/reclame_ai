@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.0'
+ruby '2.6.0'
+
 gem 'rails', '~> 5.1.7'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -17,7 +18,10 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'jquery-rails'
-gem 'mysql2', '~> 0.3.18'
+
+# gem 'mysql2', '~> 0.3.18'
+gem 'pg'
+
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 
