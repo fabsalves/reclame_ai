@@ -11,6 +11,8 @@
 #----------------------------------------------------------------------------
 ./README
 .byebug_history
+public/assets/
+
 # bundler state
 /.bundle
 /vendor/bundle/

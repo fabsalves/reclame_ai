@@ -13,4 +13,12 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
 //= require_tree .
+
+$(document).ready(function(){
+  $("#complaint_zipcode").inputmask("99999-999");
+});

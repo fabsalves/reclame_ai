@@ -29,6 +29,8 @@ gem 'geocoder'
 gem 'correios-cep'
 gem 'faraday'
 
+gem 'jquery-inputmask-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
