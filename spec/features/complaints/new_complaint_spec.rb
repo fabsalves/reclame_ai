@@ -33,7 +33,7 @@ RSpec.feature 'New complaint', type: :feature do
 
       expect(Complaint.count).to eq(0)
       expect(Customer.count).to eq(0)
-      expect(page).to have_text('Failure, check all fields please.')
+      expect(page).to have_text("Name can't be blank")
     end
 
     scenario 'when email is blank' do
@@ -45,7 +45,7 @@ RSpec.feature 'New complaint', type: :feature do
 
       click_button 'Create Complaint'
 
-      expect(page).to have_text('Failure, check all fields please.')
+      expect(page).to have_text("Email can't be blank")
     end
 
     scenario 'when order id is blank' do
@@ -60,7 +60,7 @@ RSpec.feature 'New complaint', type: :feature do
 
       expect(Complaint.count).to eq(0)
       expect(Customer.count).to eq(0)
-      expect(page).to have_text('Failure, check all fields please.')
+      expect(page).to have_text("Order can't be blank")
     end
 
     scenario 'when zipcode is blank' do
@@ -75,7 +75,7 @@ RSpec.feature 'New complaint', type: :feature do
 
       expect(Complaint.count).to eq(0)
       expect(Customer.count).to eq(0)
-      expect(page).to have_text('Failure, check all fields please.')
+      expect(page).to have_text("Zipcode can't be blank")
     end
 
     scenario 'when description is blank' do
@@ -90,7 +90,7 @@ RSpec.feature 'New complaint', type: :feature do
 
       expect(Complaint.count).to eq(0)
       expect(Customer.count).to eq(0)
-      expect(page).to have_text('Failure, check all fields please.')
+      expect(page).to have_text("Description can't be blank")
     end
   end
 end
