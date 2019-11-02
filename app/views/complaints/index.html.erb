@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>Complaints</h1>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <%= render "table", complaints: @complaints  %>
+
+      <%# <%= paginate collection %>
+    </div>
+  </div>
+</div>

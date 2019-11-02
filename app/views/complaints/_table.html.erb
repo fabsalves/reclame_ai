@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Order ID</th>
+        <th>Delivery Zipcode</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% complaints.each do |complaint| %><tr>
+        <tr>
+          <td><%= complaint.customer.name %></td>
+          <td><%= complaint.customer.email %></td>
+          <td><%= complaint.customer.phone %></td>
+          <td><%= complaint.order_id %></td>
+          <td><%= complaint.zipcode %></td>
+          <td>
+            <%= link_to 'Show', complaint_path(complaint.id), class: 'btn btn-primary btn-block' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

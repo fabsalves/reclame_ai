@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-  root to: 'complaints#new'
-
   devise_for :users
 
-  resources :users
-  resources :complaints, only: [:new, :create]
+  devise_scope :user do
+    authenticated do
+      root 'complaints#index'
+
+      resources :users
+      resources :complaints, only: [:index, :show]
+    end
+
+    unauthenticated do
+      root 'complaints#new'
+
+      resources :complaints, only: [:new, :create]
+    end
+  end
 end

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h2>Complaint #<%= @complaint.id %></h2>
+      <hr />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Customer info</h3>
+
+  <div class="row">
+    <div class="col-md-1"> Name: </div>
+    <div class="col-md-11"> <%= @complaint.customer.name %> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"> Email: </div>
+    <div class="col-md-11"> <%= @complaint.customer.email %> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"> Phone: </div>
+    <div class="col-md-11"> <%= @complaint.customer.phone || 'Não informado' %> </div>
+  </div>
+
+  <hr style="color: black; border-top: 1px solid #000 !important"/>
+
+  <h3>Order info</h3>
+
+  <div class="row">
+    <div class="col-md-1"> Order: </div>
+    <div class="col-md-11"> <%= @complaint.order_id %> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"> Zipcode: </div>
+    <div class="col-md-11"> <%= @complaint.zipcode %> </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"> Description: </div>
+    <div class="col-md-11"> <%= @complaint.description %> </div>
+  </div>
+
+  <hr style="color: black; border-top: 1px solid #000 !important"/>
+
+  <%= link_to 'Back', :back, class: 'btn btn-primary btn-block' %>
+</div>
+

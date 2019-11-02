@@ -1,4 +1,12 @@
 class ComplaintsController < ApplicationController
+  def index
+    @complaints = Complaint.all
+  end
+
+  def show
+    @complaint = Complaint.find params[:id]
+  end
+
   def new
     @complaint = Complaint.new
     @customer = @complaint.build_customer
