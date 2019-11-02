@@ -1,0 +1,8 @@
+<%= search_form_for @q do |f| %>
+  <%= f.label :suspect_cont %><br />
+  <%= f.select :suspect_eq, [['Yes', true], ['No', false]], include_blank: 'All' %><br /><br />
+
+  <%= f.submit %>
+<% end %>
+
+<hr style="color: black; border-top: 1px solid #000 !important"/>

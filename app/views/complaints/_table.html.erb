@@ -7,6 +7,7 @@
         <th>Phone</th>
         <th>Order ID</th>
         <th>Delivery Zipcode</th>
+        <th>Suspect</th>
         <th>Options</th>
       </tr>
     </thead>
@@ -18,6 +19,7 @@
           <td><%= complaint.customer.phone %></td>
           <td><%= complaint.order_id %></td>
           <td><%= complaint.zipcode %></td>
+          <td><%= complaint.suspect_label %></td>
           <td>
             <%= link_to 'Show', complaint_path(complaint.id), class: 'btn btn-primary btn-block' %>
           </td>

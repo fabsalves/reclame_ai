@@ -1,6 +1,6 @@
-class MatchLocations
+class SuspectComplaint
   def self.call(current_ip, order_zipcode)
-    new(current_ip, order_zipcode).match?
+    new(current_ip, order_zipcode).suspect?
   end
 
   def initialize(current_ip, order_zipcode)
@@ -8,8 +8,8 @@ class MatchLocations
     @order_zipcode = order_zipcode
   end
 
-  def match?
-    current_city.eql? delivery_city
+  def suspect?
+    current_city != delivery_city
   end
 
   private

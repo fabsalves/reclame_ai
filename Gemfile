@@ -30,6 +30,7 @@ gem 'correios-cep'
 gem 'faraday'
 gem 'jquery-inputmask-rails'
 gem 'pagy', '~> 3.5'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

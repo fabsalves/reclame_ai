@@ -6,4 +6,8 @@ class Complaint < ApplicationRecord
   validates :order_id, presence: true
   validates :zipcode, presence: true
   validates :description, presence: true
+
+  def suspect_label
+    suspect ? 'Yes' : 'No'
+  end
 end

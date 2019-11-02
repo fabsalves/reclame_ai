@@ -1,6 +1,7 @@
 class ComplaintsController < ApplicationController
   def index
-    @pagy, @complaints = pagy(Complaint.all)
+    @q = Complaint.ransack(params[:q])
+    @pagy, @complaints = pagy(@q.result(distinct: true))
   end
 
   def show
@@ -13,11 +14,11 @@ class ComplaintsController < ApplicationController
   end
 
   def create
-    @complaint = Complaint.new(complaint_params)
     ip = request.remote_ip
     zipcode = complaint_params[:zipcode]
 
-    return invalid_address if !MatchLocations.(ip, zipcode) && !test?
+    @complaint = Complaint.new(complaint_params)
+    @complaint.suspect = SuspectComplaint.(ip, zipcode)
 
     if @complaint.save
       redirect_to root_path, flash: { notice: 'Successfully created.' }
