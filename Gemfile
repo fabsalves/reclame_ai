@@ -28,8 +28,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'geocoder'
 gem 'correios-cep'
 gem 'faraday'
-
 gem 'jquery-inputmask-rails'
+gem 'pagy', '~> 3.5'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

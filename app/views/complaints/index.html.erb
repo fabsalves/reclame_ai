@@ -13,7 +13,7 @@
     <div class="col-md-10">
       <%= render "table", complaints: @complaints  %>
 
-      <%# <%= paginate collection %>
+      <%== pagy_nav(@pagy) %>
     </div>
   </div>
 </div>
